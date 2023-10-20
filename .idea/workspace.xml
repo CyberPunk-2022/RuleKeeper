@@ -12,7 +12,11 @@
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xianglan/rulekeeper/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rulekeeper-core/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rulekeeper-core/src/main/java/com/xianglan/rulekeeper/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rulekeeper-starter/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rulekeeper-starter/rulekeeper-nacos-starter/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rulekeeper-starter/rulekeeper-nacos-starter/src/main/java/com/xianglan/rulekeeper/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +56,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697781479639</updated>
-      <workItem from="1697781480937" duration="420000" />
+      <workItem from="1697781480937" duration="754000" />
     </task>
     <servers />
   </component>
