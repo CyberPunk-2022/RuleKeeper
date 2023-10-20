@@ -11,6 +11,7 @@
     <modules>
         <module>rulekeeper-starter</module>
         <module>rulekeeper-core</module>
+        <module>rulekeeper-web</module>
     </modules>
 
     <properties>
