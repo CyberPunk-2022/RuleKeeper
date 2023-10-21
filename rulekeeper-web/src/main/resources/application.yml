@@ -1,0 +1,11 @@
+server:
+  port: 7890
+rulekeeper:
+  enabled: true
+  config-name: rulekeeper
+nacos:
+  config:
+    enabled: true
+    server-addr: 123.57.73.225
+    username: nacos
+    password: nacos

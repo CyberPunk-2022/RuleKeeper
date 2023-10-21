@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 @Slf4j
-public abstract class BaseRulekeeperBaseConfig implements RulekeeperBaseConfig{
+public abstract class BaseRulekeeperBaseConfig implements RulekeeperBaseConfig {
 
     @Autowired
     protected RulekeeperConfigProperties configProperties;
@@ -44,7 +44,7 @@ public abstract class BaseRulekeeperBaseConfig implements RulekeeperBaseConfig{
      * 2、得到每个groovy配置并比对有无变化
      * 3、有变化的groovy配置重新注册
      *
-     * @param mainConfig {"instanceNames":["com.java3y.hades.core.constant.HadesConstant"],"updateTime":"2023年3月20日10:26:0131"}
+     * @param mainConfig {"instanceNames":["com.xianglan.rulekeeper.core.constant.RulekeeperConstant"],"updateTime":"2023年3月20日10:26:0131"}
      */
     public synchronized void bootstrap(String mainConfig) {
         try {

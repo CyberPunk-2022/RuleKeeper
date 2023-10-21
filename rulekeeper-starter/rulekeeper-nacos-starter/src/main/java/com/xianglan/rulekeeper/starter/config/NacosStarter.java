@@ -12,9 +12,22 @@ import org.springframework.stereotype.Service;
 
 import java.util.concurrent.Executor;
 
+/**
+ * nacos 启动器
+ */
 @Service
 @Slf4j
 public class NacosStarter extends BaseRulekeeperBaseConfig implements Listener {
+    
+
+    @Override
+    public void removeProperty(String key) {
+        try {
+            configService.removeConfig(key, RulekeeperConstant.NACOS_DEFAULT_GROUP);
+        } catch (NacosException e) {
+            log.error("RulekeeperConfigService#removeProperty fail:{}", Throwables.getStackTraceAsString(e));
+        }
+    }
 
     @NacosInjected
     private ConfigService configService;
@@ -35,7 +48,7 @@ public class NacosStarter extends BaseRulekeeperBaseConfig implements Listener {
             configService.addListener(configProperties.getConfigName(),RulekeeperConstant.NACOS_DEFAULT_GROUP,this);
             log.info("分布式配置中心配置[{}]监听器已启动", configProperties.getConfigName());
         } catch (Exception e) {
-            log.error("HadesConfigService#refresh key:[{}] fail:{}", configProperties.getConfigName(), Throwables.getStackTraceAsString(e));
+            log.error("RulekeeperConfigService#refresh key:[{}] fail:{}", configProperties.getConfigName(), Throwables.getStackTraceAsString(e));
         }
     }
 
@@ -49,7 +62,7 @@ public class NacosStarter extends BaseRulekeeperBaseConfig implements Listener {
         try{
             configService.getConfig(configName, RulekeeperConstant.NACOS_DEFAULT_GROUP,3000L);
         }catch (NacosException e){
-            log.error("HadesConfigService#getConfigValueByName key:[{}],fail:{}", configName, Throwables.getStackTraceAsString(e));
+            log.error("RulekeeperConfigService#getConfigValueByName key:[{}],fail:{}", configName, Throwables.getStackTraceAsString(e));
         }
         return null;
     }

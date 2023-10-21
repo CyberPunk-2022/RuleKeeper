@@ -23,9 +23,9 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>io.github.ZhongFuCheng3y</groupId>
-            <artifactId>hades-core</artifactId>
-            <version>1.0.4</version>
+            <groupId>com.xianglan.rulekeeper</groupId>
+            <artifactId>rulekeeper-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
