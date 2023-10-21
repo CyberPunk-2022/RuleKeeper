@@ -1,6 +1,5 @@
 package com.xianglan.rulekeeper.controller;
 
-
 import com.alibaba.fastjson2.JSON;
 import com.xianglan.rulekeeper.annotation.RulekeeperAspect;
 import com.xianglan.rulekeeper.annotation.RulekeeperResult;
@@ -47,12 +46,10 @@ public class ConfigController {
         configService.addConfig(rulekeeperParam);
         return BasicResultVO.success();
     }
-
     @RequestMapping("/get")
     public List<RulekeeperConfigListVo> getAllConfig(String keywords){
         return configService.getAllConfig(keywords);
     }
-
     @RequestMapping("/delete")
     public BasicResultVO deleteConfig(String name){
         configService.deleteConfig(name);

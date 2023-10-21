@@ -22,7 +22,7 @@ public class RegisterBeanService {
     public <T> T registerBean(String name, Class<T> clazz, Object... args) {
         /**
          * ConfigurableApplicationContext是Spring框架实现的一种ApplicationContext接口的子类，
-         * 它提供了可配置的应用程序上下文环境。t增加了许多可配置的选项，比如可以动态地加载和卸载bean定义，
+         * 它提供了可配置的应用程序上下文环境。增加了许多可配置的选项，比如可以动态地加载和卸载bean定义，
          * 可以在应用程序运行时添加/移除监听器，还可以手动刷新上下文等
          */
         ConfigurableApplicationContext context = (ConfigurableApplicationContext) applicationContext;

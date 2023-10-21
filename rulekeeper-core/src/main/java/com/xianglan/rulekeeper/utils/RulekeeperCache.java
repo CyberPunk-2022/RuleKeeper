@@ -24,6 +24,12 @@ public class RulekeeperCache {
         return CODE_CACHE.get(key);
     }
 
+    /**
+     * 比对groovy代码是否发生变化
+     * @param key
+     * @param currentGroovyCode
+     * @return
+     */
     public static boolean diff(String key, String currentGroovyCode) {
         // 获取当前的groovy脚本加密进行比对
         String currentGroovyCodeMd5 = DigestUtils.md5DigestAsHex(currentGroovyCode.getBytes(StandardCharsets.UTF_8));

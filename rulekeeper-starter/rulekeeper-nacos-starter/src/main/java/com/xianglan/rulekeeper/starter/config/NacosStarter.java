@@ -18,7 +18,8 @@ import java.util.concurrent.Executor;
 @Service
 @Slf4j
 public class NacosStarter extends BaseRulekeeperBaseConfig implements Listener {
-    
+    @NacosInjected
+    private ConfigService configService;
 
     @Override
     public void removeProperty(String key) {
@@ -29,8 +30,7 @@ public class NacosStarter extends BaseRulekeeperBaseConfig implements Listener {
         }
     }
 
-    @NacosInjected
-    private ConfigService configService;
+
     @Override
     public Executor getExecutor() {
         return null;
@@ -45,6 +45,7 @@ public class NacosStarter extends BaseRulekeeperBaseConfig implements Listener {
     @Override
     public void addListener() {
         try{
+            // 只监听dataID为rulekeeper的配置变化
             configService.addListener(configProperties.getConfigName(),RulekeeperConstant.NACOS_DEFAULT_GROUP,this);
             log.info("分布式配置中心配置[{}]监听器已启动", configProperties.getConfigName());
         } catch (Exception e) {
@@ -60,7 +61,7 @@ public class NacosStarter extends BaseRulekeeperBaseConfig implements Listener {
     @Override
     public String getConfigValueByName(String configName) {
         try{
-            configService.getConfig(configName, RulekeeperConstant.NACOS_DEFAULT_GROUP,3000L);
+            return configService.getConfig(configName, RulekeeperConstant.NACOS_DEFAULT_GROUP,3000L);
         }catch (NacosException e){
             log.error("RulekeeperConfigService#getConfigValueByName key:[{}],fail:{}", configName, Throwables.getStackTraceAsString(e));
         }
